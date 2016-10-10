@@ -1,0 +1,12 @@
+#signup-container {
+  max-height: 450px;
+  /* watch container in application.css */
+}
+
+#signup-form-container {
+  /* watch form-container in application.css */
+}
+
+#signup-errors-container {
+  /* watch errors-container in application.css */
+}

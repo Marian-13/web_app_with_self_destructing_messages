@@ -1,30 +1,41 @@
 require_relative 'helpers/bootstrap_utils'
 require_relative 'helpers/path_utils'
-require 'sinatra/base'
 
-# class Sinatra::Application
-#   alias origin_erb erb
-#
-#   def erb(template, options = {}, locals = {}, &block)
-#     result = method("#{(/\w+\//.match(template.to_s)).to_s[0..-2]}_css_link").call
-#     def rout_specific_css_link
-#       result
-#     end
-#
-#     origin_erb(template, options = {}, locals = {}, &block)
-#   end
-# end
+require 'sinatra/base'
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+  adapter:  'sqlite3',
+  database: 'web_app_with_self_destructing_messages.sqlite3.db'
+)
 
 class WebAppWithSelfDestructingMessages < Sinatra::Application
+  enable :sessions
+
   get '/' do
     erb :'sessions/new.html', layout: :'layouts/application.html'
   end
 
-  get '/sessions/new' do
-    erb :"sessions/new"
+  get '/login?:format' do
+    erb :'sessions/new.html', layout: :'layouts/application.html'
+  end
+
+  post '/login?:format' do
+    # TODO A stub
+    redirect to('/messages/index')
   end
 
   get '/signup?:format' do
-    erb 'app/assets/views/users/new'
+    erb :'users/new.html', layout: :'layouts/application.html'
+  end
+
+  post '/signup?:format' do
+    # TODO A stub
+    redirect to('/messages/index')
+  end
+
+  get '/messages/index' do
+    # TODO A stub
+    erb :'messages/index.html'
   end
 end
