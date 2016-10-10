@@ -9,6 +9,8 @@ ActiveRecord::Base.establish_connection(
   database: 'web_app_with_self_destructing_messages.sqlite3.db'
 )
 
+require_relative
+
 class WebAppWithSelfDestructingMessages < Sinatra::Application
   enable :sessions
 
