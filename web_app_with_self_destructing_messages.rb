@@ -1,15 +1,17 @@
 require_relative 'helpers/bootstrap_utils'
 require_relative 'helpers/path_utils'
 
+require 'sinatra'
 require 'sinatra/base'
-require 'active_record'
+# require 'active_record'
+require 'sinatra/activerecord'
 
-ActiveRecord::Base.establish_connection(
-  adapter:  'sqlite3',
-  database: 'web_app_with_self_destructing_messages.sqlite3.db'
-)
+# ActiveRecord::Base.establish_connection(
+#   adapter:  'sqlite3',
+#   database: 'web_app_with_self_destructing_messages.sqlite3.db'
+# )
 
-require_relative
+require_relative 'models/user.rb'
 
 class WebAppWithSelfDestructingMessages < Sinatra::Application
   enable :sessions

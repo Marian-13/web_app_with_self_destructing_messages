@@ -1,2 +1,2 @@
 # Ignore database configurations.
-/config/database.yml
+# /config/database.yml
