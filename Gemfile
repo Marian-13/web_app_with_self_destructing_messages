@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gem 'sinatra', '~>1.4.7'
 
 # Mapping database tables to Ruby classes
-gem 'activerecord', '~>5.0.0.1'
-# Extends Sinatra with ActiveRecord helpers
-gem 'sinatra-activerecord', '~>2.0.10'
+gem 'data_mapper'
+# PostgreSQL Adapter for DataMapper
+gem 'dm-postgres-adapter'
 
 # Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/]
 gem 'pg'

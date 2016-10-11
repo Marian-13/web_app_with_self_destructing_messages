@@ -3,15 +3,16 @@ require_relative 'helpers/path_utils'
 
 require 'sinatra'
 require 'sinatra/base'
-# require 'active_record'
-require 'sinatra/activerecord'
 
-# ActiveRecord::Base.establish_connection(
-#   adapter:  'sqlite3',
-#   database: 'web_app_with_self_destructing_messages.sqlite3.db'
-# )
+configure :development do
+  DataMapper.setup(:default, 'postgres://marian:cantaccessdatabase@localhost/web_app_with_self_destructing_messages')
+end
+
+require 'data_mapper'
 
 require_relative 'models/user.rb'
+
+DataMapper.auto_migrate! # TODO where to place?
 
 class WebAppWithSelfDestructingMessages < Sinatra::Application
   enable :sessions
@@ -34,6 +35,9 @@ class WebAppWithSelfDestructingMessages < Sinatra::Application
   end
 
   post '/signup?:format' do
+    @user = User.new(name: params[:name], email: params[:email])
+    @user.save
+
     # TODO A stub
     redirect to('/messages/index')
   end
