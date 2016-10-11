@@ -31,5 +31,15 @@
   </div>
 
   <div id="signup-errors-container" class="errors-container">
+    <% @user.errors.each do |error| %>
+      <% error.each do |message| %>
+        <div class="alert alert-danger"><%= message %></div>
+      <% end %>
+    <% end %>
+
+    <% # TODO remove  %>
+    <% flash[:notice_failure].each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
   </div>
 </div>

@@ -1,6 +1,6 @@
 #login-container {
   max-height: 300px;
-  /* watch container in application.css */
+  /* watch std-container in application.css */
 }
 
 #login-form-container {
@@ -9,4 +9,22 @@
 
 #login-errors-container {
   /* watch errors-container in application.css */
+}
+
+#user-container {
+  /* watch std-container in application.css */
+}
+
+#user-info-container {
+  padding: 5px;
+}
+
+.user-attribute {
+  width: 25%;
+  overflow: auto;
+  float: left;
+}
+
+.user-attribute-value {
+  margin-left: 25%;
 }

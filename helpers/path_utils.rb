@@ -19,7 +19,3 @@ module PathUtils
   #   method(match_data.to_s[6..-2]).call
   # end
 end
-
-# TODO remove hardly tracked script
-include PathUtils
-generate_css_links

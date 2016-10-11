@@ -10,5 +10,3 @@ module BootstrapUtils
     "<script src=\"/#{BOOTSTRAP_CONTAINING_FOLDER}/js/bootstrap.min.js\"></script>"
   end
 end
-
-include BootstrapUtils

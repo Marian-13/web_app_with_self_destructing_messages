@@ -27,6 +27,7 @@
   right: 0px;
   height: 100%;
   overflow-y: auto;
-  min-width: 38%;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  max-width: 38%;
+  padding: 5px;
+  /*border: 1px solid rgba(0, 0, 0, 0.25);*/
 }
