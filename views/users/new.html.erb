@@ -5,25 +5,36 @@
     <form action="#" method="post">
       <div class="form-group">
         <label for="name">Name:</label><br />
-        <input class="form-control" type="text" name="name" placeholder="Enter name"/>
+        <input id="name" class="form-control" name="name" type="text"
+               placeholder="Enter name"
+               value="<%= name_value %>"
+               onkeydown="focusOn('email');"/>
       </div>
 
       <div class="form-group">
         <label for="email">Email:</label><br />
-        <input class="form-control" type="text" name="email" placeholder="Enter email"/>
+        <input id="email" class="form-control" name="email" type="text"
+               placeholder="Enter email"
+               value="<%= email_value %>"
+               onkeydown="focusOn('password');"/>
       </div>
 
       <div class="form-group">
         <label for="password">Password:</label><br />
-        <input class="form-control" type="password" name="password" placeholder="Enter Password"/>
+        <input id="password" class="form-control" name="password" type="password"
+               placeholder="Enter Password"
+               onkeydown="focusOn('password_confirmation');"/>
       </div>
 
       <div class="form-group">
         <label for="password_confirmation">Password Confirmation:</label><br />
-        <input class="form-control" type="password" name="password_confirmation" placeholder="Enter Password"/>
+        <input id="password_confirmation" class="form-control" type="password"
+               name="password_confirmation"
+               placeholder="Enter Password"
+               onkeydown="focusOn('submit');"/>
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button id="submit" type="submit" class="btn btn-primary">Submit</button>
     </form>
 
     <br />
@@ -36,10 +47,8 @@
         <div class="alert alert-danger"><%= message %></div>
       <% end %>
     <% end %>
-
-    <% # TODO remove  %>
-    <% flash[:notice_failure].each do |message| %>
-      <div class="alert alert-danger"><%= message %></div>
-    <% end %>
   </div>
 </div>
+
+<% # TODO refactor  %>
+<%= users_js_script %>
