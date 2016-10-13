@@ -9,17 +9,11 @@ class User
   property :email,    String, required: true, format: EMAIL_REGEX, unique: true
   property :password, BCryptHash
 
-  has n, :dialogs
-  has n, :messages, throught: :dialogs
+  has n, :dialogs, child_key: ['first_participant_id']
+  has n, :messages, trought: :dialogs, child_key: ['sender_id']
 
   before :save do
     self.name.capitalize!
     self.email.downcase!
   end
 end
-
-User.finalize
-# DataMapper.finalize
-# DataMapper.auto_upgrade!
-
-# DataMapper.auto_migrate!

@@ -12,7 +12,68 @@
 }
 
 #user-container {
-  /* watch std-container in application.css */
+  position: relative;
+  width: 90%;
+  margin: 5px auto;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#recent {
+  position: absolute;
+  width: 30%;
+  top: 0px;
+  left: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#friends {
+  position: absolute;
+  width: 30%;
+  bottom: 0px;
+  left: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#conversations {
+  margin-left: 32%;
+  margin-right: 27%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  height: 500px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#conversations-tabs {
+  position: absolute;
+  padding-top: 5px;
+  background-color: white;
+  height: 15%;
+}
+
+.messages {
+  margin-top: 16%; /* TODO responsive !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+  padding: 5px;
+  height: 350px; /* TODO media query */
+  overflow-y: auto;
+}
+
+.sent-message {
+  margin-left: 20%;
+  text-align: right;
+}
+
+.received-message {
+  margin-right: 20%;
+  text-align: left;
+}
+
+#notifications {
+  position: absolute;
+  width: 25%;
+  top: 0px;
+  right: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 #user-info-container {

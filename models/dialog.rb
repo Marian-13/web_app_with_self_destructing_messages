@@ -1,10 +1,9 @@
 class Dialog
   include DataMapper::Resource
 
-  property :id, Serial
+  property :id,                  Serial
+  property :second_participant_id, Integer, required: true
 
-  belongs_to :first_participant,   model: 'User'
-  belongs_to :second_particicpant, model: 'User'
+  belongs_to :user, child_key: ['first_participant_id']  # defaults to :required => true
+  has n, :messages
 end
-
-Dialog.finalize

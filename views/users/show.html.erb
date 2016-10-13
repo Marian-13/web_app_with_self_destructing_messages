@@ -1,28 +1,55 @@
-<div id="user-container" class="std-container">
-  <div id="user-info-container">
-    <span class="centered"><h2>User Info</h2></span>
+<div id="user-container">
+  <div id="recent">
+    <span class="centered"><h3>Recent</h3></span>
+  </div>
 
-    <ul class="list-group">
-      <li class="list-group-item">
-        <div class="user-attribute"><b>Id:</b></div>
-        <div class="user-attribute-value"><%= @user.id %></div>
-      </li>
+  <div id="friends">
+    <span class="centered"><h3>Friends</h3></span>
+  </div>
 
-      <li class="list-group-item">
-        <div class="user-attribute"><b>Name:</b></div>
-        <div class="user-attribute-value"><%= @user.name %></div>
-      </li>
+  <div id="conversations">
+    <div id="conversations-tabs">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#first_conversation">First</a></li>
+        <li><a data-toggle="tab" href="#second_conversation">Second</a></li>
+        <li><a data-toggle="tab" href="#second_conversation">Second</a></li>
+        <li><a data-toggle="tab" href="#second_conversation">Second</a></li>
+      </ul>
+    </div>
 
-      <li class="list-group-item">
-        <div class="user-attribute"><b>Description:</b></div>
-        <div class="user-attribute-value"><%= @user.email %></div>
-      </li>
+    <div class="tab-content">
+      <div id="first_conversation" class="tab-pane fade in active">
+        <div class="messages">
+          <div class="sent-message alert alert-warning">
+            Hello
+          </div>
+          <div class="received-message alert alert-info">
+            Hi!
+          </div>
+        </div>
 
-      <li class="list-group-item">
-        <div class="user-attribute"><b>Password:</b></div>
-        <div class="user-attribute-value"><%= @user.password %></div>
-      </li>
-    </ul>
-    
+        <div class="message-input">
+          <input id="first-conversation-input" class="form-control" onkeydown="sendMessage(this)"/>
+        </div>
+      </div>
+
+      <div id="second_conversation" class="tab-pane fade">
+        <div class="messages">
+          Second conversation
+        </div>
+
+        <div class="message-input">
+          <input id="second-conversation-input" class="form-control" onkeydown="sendMessage(this)"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="notifications">
+    <span class="centered"><h3>Notifications</h3></span>
   </div>
 </div>
+
+
+<% # TODO refactor  %>
+<%= users_js_script %>

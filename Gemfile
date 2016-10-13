@@ -1,3 +1,4 @@
+# gem install bundler
 source 'https://rubygems.org'
 
 # Sinatra is a DSL for quickly creating web applications in Ruby with minimal effort
@@ -19,6 +20,9 @@ gem 'bcrypt', '~>3.1.11'
 
 # Simple flash hash implementation for Rack apps
 gem 'rack-flash3', '~>1.0.5'
+
+# Simple pub/sub messaging for the web
+gem 'faye'
 
 group :development do
   # Restarts your app when a file changes

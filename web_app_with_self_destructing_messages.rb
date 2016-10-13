@@ -11,7 +11,16 @@ require 'sinatra/base'
 require 'rack-flash'
 require 'data_mapper'
 
-require_relative 'models/user.rb'
+require_relative 'models/all_models'
+
+# DataMapper.auto_migrate!
+DataMapper.finalize
+
+# DataMapper.finalize
+# DataMapper.auto_upgrade!
+
+# DataMapper.auto_migrate!
+
 
 class WebAppWithSelfDestructingMessages < Sinatra::Base
   enable :sessions
@@ -23,11 +32,12 @@ class WebAppWithSelfDestructingMessages < Sinatra::Base
 
   include UserHelpers
 
-  ['/users/:id'].each do |rout|
-    before rout do
-      authorize
-    end
-  end
+  # TODO uncomment
+  # ['/users/:id'].each do |rout|
+  #   before rout do
+  #     authorize
+  #   end
+  # end
 
   # root
   get '/' do
