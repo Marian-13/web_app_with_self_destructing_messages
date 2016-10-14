@@ -23,5 +23,31 @@ function sendMessage(self) {
 function scrollToBottom(node) {
   // TODO if mouse down on scroll
   node.scrollTop = node.scrollHeight;
+}
 
+/* -------------------------------------------------------------------------- */
+
+function changeDestructionConditionLabel(self) {
+  // use `children` instead of `childNodes` to exclude text and comment nodes
+  if (self.value == 'Visits remaining') {
+    self.parentNode.children[3].innerHTML = 'Destruct after: (visits)';
+  } else if (self.value == 'Time remaining') {
+    self.parentNode.children[3].innerHTML = 'Destruct after: (seconds)';
+  } else {
+    // TODO remove
+    console.log('Can not change destruction condition label...');
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+function keydownMessageText(self, event) {
+  // event.preventDefault(); outside if prevents all keys and key combinations
+  if (event.keyCode == 13 && event.shiftKey) {
+    event.preventDefault();
+    self.value += '\n'
+  } else if (event.keyCode == 13) {
+    event.preventDefault();
+    // TODO
+  }
 }

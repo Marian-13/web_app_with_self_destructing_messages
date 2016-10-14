@@ -41,7 +41,7 @@ class WebAppWithSelfDestructingMessages < Sinatra::Base
 
   # root
   get '/' do
-    erb :'sessions/new.html', layout: :'layouts/application.html'
+    redirect to('/login')
   end
 
 

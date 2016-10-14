@@ -20,7 +20,7 @@
 
 #recent {
   position: absolute;
-  width: 30%;
+  width: 20%;
   top: 0px;
   left: 0px;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -28,32 +28,31 @@
 
 #friends {
   position: absolute;
-  width: 30%;
+  width: 20%;
   bottom: 0px;
   left: 0px;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 #conversations {
-  margin-left: 32%;
+  margin-left: 22%;
   margin-right: 27%;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  height: 500px;
+  padding: 5px;
+  height: 550px; /* TODO media query */
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 #conversations-tabs {
-  position: absolute;
-  padding-top: 5px;
+  float:left;
+  top: 5px;
+  left: 5px;
   background-color: white;
   height: 15%;
 }
 
 .messages {
-  margin-top: 16%; /* TODO responsive !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-  padding: 5px;
+  /*padding: 5px;*/
+  clear: both;
   height: 350px; /* TODO media query */
   overflow-y: auto;
 }
@@ -67,6 +66,53 @@
   margin-right: 20%;
   text-align: left;
 }
+
+
+/* -------------------------------------------------------------------------- */
+
+#message-input {
+  height: 110px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#message-destruction-input {
+  float: left;
+  max-width: 170px;
+}
+
+#destruction-type {
+  padding-right: 5px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: 2em;
+}
+
+#destruction-condition {
+  padding-right: 5px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: 2em;
+}
+
+#message-text-input {
+  height: inherit;
+  text-align: center;
+}
+
+.message-text-input-tip {
+  color: #337ab7;
+}
+
+#message-text {
+  float: left;
+  height: calc(100% - 2em); /* TODO fallback */
+  width: calc(100% - 175px);
+  margin-left: 5px;
+}
+
+/* -------------------------------------------------------------------------- */
 
 #notifications {
   position: absolute;

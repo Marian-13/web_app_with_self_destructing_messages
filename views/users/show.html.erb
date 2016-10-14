@@ -28,9 +28,31 @@
           </div>
         </div>
 
-        <div class="message-input">
-          <input id="first-conversation-input" class="form-control" onkeydown="sendMessage(this)"/>
+        <div id="message-input">
+          <div id="message-destruction-input">
+            <label for="destruction-type">Destruction type:</label><br />
+            <select id="destruction-type" class="form-control" name="destruction_type"
+                    onchange="changeDestructionConditionLabel(this);">
+              <option>Visits remaining</option>
+              <option>Time remaining</option>
+            </select>
+
+            <label for="destruction-condition">Destruct after: (visits)</label><br />
+            <input id="destruction-condition" class="form-control" name="destruction_condition"/>
+          </div>
+
+          <div id="message-text-input">
+            <label for="message-text">
+              Message text:
+              <span class="message-text-input-tip"
+                    title="`Enter` - publish message&#010;`Shift+Enter` - new line">?<span>
+            </label><br />
+            <!-- class="form-control" before id="message-text" !!! -->
+            <textarea class="form-control" id="message-text"
+                      onkeydown="keydownMessageText(this, event);"></textarea>
+          </div>
         </div>
+
       </div>
 
       <div id="second_conversation" class="tab-pane fade">
@@ -38,9 +60,32 @@
           Second conversation
         </div>
 
-        <div class="message-input">
-          <input id="second-conversation-input" class="form-control" onkeydown="sendMessage(this)"/>
+        <div id="message-input">
+          <div id="message-destruction-input">
+            <label for="destruction-type">Destruction type:</label><br />
+            <select id="destruction-type" class="form-control" name="destruction_type"
+                    onchange="changeDestructionConditionLabel(this);">
+              <option>Visits remaining</option>
+              <option>Time remaining</option>
+            </select>
+
+            <label for="destruction-condition">Destruct after: (visits)</label><br />
+            <input id="destruction-condition" class="form-control" name="destruction_condition"/>
+          </div>
+
+          <div id="message-text-input">
+            <label for="message-text">
+              Message text:
+              <span class="message-text-input-tip"
+                    title="`Enter` - publish message&#010;`Shift+Enter` - new line">?<span>
+            </label><br />
+
+            <!-- class="form-control" before id="message-text" !!! -->
+            <textarea class="form-control" id="message-text"
+                      onkeydown="keydownMessageText(this, event);"></textarea>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
