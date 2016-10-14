@@ -1,2 +1,5 @@
 # Databases configutarion
 /config/database.yml
+
+# Outdated files
+/outdated

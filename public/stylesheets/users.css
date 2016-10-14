@@ -14,47 +14,96 @@
 #user-container {
   position: relative;
   width: 90%;
+  height: 550px; /* TODO media query */
   margin: 5px auto;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-#recent {
+
+/* -------------------------------------------------------------------------- */
+#contacts {
   position: absolute;
   width: 20%;
+  height: inherit;
   top: 0px;
   left: 0px;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-#friends {
-  position: absolute;
-  width: 20%;
-  bottom: 0px;
-  left: 0px;
+#contacts-header {
+  font-size: 2em;
+}
+
+#recent {
+  height: 33%;
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
+
+#friends {
+  height: 33%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------------------------------------------------------------- */
+
+#search {
+  height: 33%;
+  padding-left: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#search-input {
+  padding-top: 3px;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#search-type {
+  float: left;
+  max-width: 90px;
+  padding: 0px 5px; /* TODO DRY destruction-type destruction-conditions*/
+  height: 2em;
+  margin-right: 5px;
+}
+
+#search-query {
+  width: calc(100% - 100px);
+  padding: 0px 5px; /* TODO DRY destruction-type destruction-conditions*/
+  height: 2em;
+}
+
+#search-result {
+  height: calc(100% - 4em); /* TODO */
+  padding: 0px 5px;
+  overflow-y: auto;
+}
+
+.found-user {
+  margin-top: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
 
 #conversations {
   margin-left: 22%;
   margin-right: 27%;
   padding: 5px;
-  height: 550px; /* TODO media query */
   border: 1px solid rgba(0, 0, 0, 0.25);
+  height: inherit;
 }
 
 #conversations-tabs {
-  float:left;
-  top: 5px;
-  left: 5px;
-  background-color: white;
-  height: 15%;
+
 }
 
-.messages {
-  /*padding: 5px;*/
-  clear: both;
+.conversations-tab {
+  
+}
+
+.conversations-messages {
   height: 350px; /* TODO media query */
   overflow-y: auto;
+  border: 1px solid rgba(255, 0, 0, 0.5);
 }
 
 .sent-message {
@@ -74,7 +123,7 @@
   height: 110px;
   padding-left: 5px;
   padding-right: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 #message-destruction-input {
@@ -127,11 +176,13 @@
 }
 
 .user-attribute {
-  width: 25%;
-  overflow: auto;
+  height: 2em;
+  width: 45px;
   float: left;
 }
 
 .user-attribute-value {
-  margin-left: 25%;
+  height: 2em;
+  width: calc(100% - 45px); /*TODO Responsive */
+  /*margin-left: 45px;*/
 }

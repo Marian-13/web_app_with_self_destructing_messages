@@ -1,93 +1,67 @@
 <div id="user-container">
-  <div id="recent">
-    <span class="centered"><h3>Recent</h3></span>
-  </div>
 
-  <div id="friends">
-    <span class="centered"><h3>Friends</h3></span>
+  <div id=contacts>
+    <div id="recent">
+      <span class="centered"><h4>Recent</h4></span>
+    </div>
+
+    <div id="friends">
+      <span class="centered"><h4>Friends</h4></span>
+    </div>
+
+    <div id="search">
+      <div class="centered contacts-header"><b>Search</b></div>
+      <div id="search-input">
+        <select class="form-control" id="search-type">
+          <option>By email</option>
+          <option>By name</option>
+        </select>
+        <input class="form-control" id="search-query" name="search_query" type="text" placeholder="Enter search query">
+      </div>
+      <div id="search-result">
+        <div class="centered">
+          Search results:
+        </div>
+        <div class="found-user">
+          <div class="user-attribute"><b>Name:</b></div>
+          <div class="user-attribute-value">User01</div>
+          <div class="user-attribute"><b>Email:</b></div>
+          <div class="user-attribute-value">user01@email.com</div>
+          <button class="btn btn-default" type="button" name="button" onclick="clickStartDialog();">
+            Start Dialog
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div id="conversations">
-    <div id="conversations-tabs">
-      <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#first_conversation">First</a></li>
-        <li><a data-toggle="tab" href="#second_conversation">Second</a></li>
-        <li><a data-toggle="tab" href="#second_conversation">Second</a></li>
-        <li><a data-toggle="tab" href="#second_conversation">Second</a></li>
-      </ul>
-    </div>
+    <div class="centered"><b>Conversations</b></div>
 
-    <div class="tab-content">
-      <div id="first_conversation" class="tab-pane fade in active">
-        <div class="messages">
-          <div class="sent-message alert alert-warning">
-            Hello
-          </div>
-          <div class="received-message alert alert-info">
-            Hi!
-          </div>
+    <ul id="conversations-tabs" class="nav nav-tabs">
+      <li class="conversation-tab"><a data-toggle="tab" href="#first">Menu 1</a></li>
+      <li class="conversation-tab"><a data-toggle="tab" href="#second">Menu 2</a></li>
+      <li class="conversation-tab"><a data-toggle="tab" href="#third">Menu 3</a></li>
+    </ul>
+
+    <div id="conversations-tab-content" class="tab-content">
+      <div id="first" class="tab-pane fade">
+        <div class="conversations-messages">
+
         </div>
 
-        <div id="message-input">
-          <div id="message-destruction-input">
-            <label for="destruction-type">Destruction type:</label><br />
-            <select id="destruction-type" class="form-control" name="destruction_type"
-                    onchange="changeDestructionConditionLabel(this);">
-              <option>Visits remaining</option>
-              <option>Time remaining</option>
-            </select>
-
-            <label for="destruction-condition">Destruct after: (visits)</label><br />
-            <input id="destruction-condition" class="form-control" name="destruction_condition"/>
-          </div>
-
-          <div id="message-text-input">
-            <label for="message-text">
-              Message text:
-              <span class="message-text-input-tip"
-                    title="`Enter` - publish message&#010;`Shift+Enter` - new line">?<span>
-            </label><br />
-            <!-- class="form-control" before id="message-text" !!! -->
-            <textarea class="form-control" id="message-text"
-                      onkeydown="keydownMessageText(this, event);"></textarea>
-          </div>
-        </div>
-
+        <!-- <div id="message-input"> ... </div>-->
       </div>
 
-      <div id="second_conversation" class="tab-pane fade">
-        <div class="messages">
-          Second conversation
-        </div>
+      <div id="second" class="tab-pane fade conversations-messages">
+        <h2>Second</h2>
+      </div>
 
-        <div id="message-input">
-          <div id="message-destruction-input">
-            <label for="destruction-type">Destruction type:</label><br />
-            <select id="destruction-type" class="form-control" name="destruction_type"
-                    onchange="changeDestructionConditionLabel(this);">
-              <option>Visits remaining</option>
-              <option>Time remaining</option>
-            </select>
-
-            <label for="destruction-condition">Destruct after: (visits)</label><br />
-            <input id="destruction-condition" class="form-control" name="destruction_condition"/>
-          </div>
-
-          <div id="message-text-input">
-            <label for="message-text">
-              Message text:
-              <span class="message-text-input-tip"
-                    title="`Enter` - publish message&#010;`Shift+Enter` - new line">?<span>
-            </label><br />
-
-            <!-- class="form-control" before id="message-text" !!! -->
-            <textarea class="form-control" id="message-text"
-                      onkeydown="keydownMessageText(this, event);"></textarea>
-          </div>
-        </div>
-
+      <div id="third" class="tab-pane fade conversations-messages">
+        <h3>Third</h3>
       </div>
     </div>
+
   </div>
 
   <div id="notifications">
